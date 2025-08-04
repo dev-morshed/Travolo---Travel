@@ -1,0 +1,121 @@
+:root {
+  --theme-color: #ff681a;
+  --theme-color2: #37d4d9;
+  --secondary-color: #111330;
+  --title-color: #1c1c1c;
+  --body-color: #505050;
+  --smoke-color: #f7f7f7;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --yellow-color: #fec624;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #ffccb1;
+  --bg-color1: #fff5f0;
+  --bg-color2: #f5f5f5;
+  --title-font: "Jost", sans-serif;
+  --body-font: "Jost", sans-serif;
+  --icon-font: "Font Awesome 5 Pro";
+  --main-container: 1220px;
+  --container-gutters: 30px;
+  --section-space: 120px;
+  --section-space-mobile: 80px;
+  --section-title-space: 80px;
+  --ripple-ani-duration: 5s;
+}
+
+// Color Variation
+$theme-color: var(--theme-color);
+$theme-color2: var(--theme-color2);
+$secondary-color: var(--secondary-color);
+$title-color: var(--title-color);
+$body-color: var(--body-color);
+$smoke-color: var(--smoke-color);
+$white-color: var(--white-color);
+$black-color: var(--black-color);
+$yellow-color: var(--yellow-color);
+$success-color: var(--success-color);
+$error-color: var(--error-color);
+$border-color: var(--border-color);
+
+// Font Variation
+$icon-font: var(--icon-font);
+
+// Typography
+$title-font: var(--title-font);
+$body-font: var(--body-font);
+$body-font-size: 16px;
+$body-line-Height: 26px;
+$body-font-weight: 400;
+$p-line-Height: 1.625;
+
+// Device Variation
+$hd: 1921px; // Large Device Than 1920
+$xl: 1500px; // Extra large Device
+$ml: 1399px; // Medium Large Device
+$lg: 1199px; // Large Device (Laptop)
+$md: 991px; // Medium Device (Tablet)
+$sm: 767px; // Small Device
+$xs: 575px; // Extra Small Device
+
+// Spacing Count with 5x
+$space-count: 5;
+
+// Section Space  For large Device
+$space: var(--section-space);
+$space-extra: calc(var(--section-space) - 30px);
+
+// Section Space On small Device
+$space-mobile: var(--section-space-mobile);
+$space-mobile-extra: calc(var(--section-space-mobile) - 30px);
+
+// BG Color Mapping
+$bgcolorMap: ();
+$bgcolorMap: map-merge(
+  (
+    "theme": $theme-color,
+    "smoke": $smoke-color,
+    "white": $white-color,
+    "black": $black-color,
+    "title": $title-color,
+  ),
+  $bgcolorMap
+);
+
+// Overlay Color Mapping
+$overlaycolorMap: ();
+$overlaycolorMap: map-merge(
+  (
+    "theme": $theme-color,
+    "title": $title-color,
+    "white": $white-color,
+    "black": $black-color,
+  ),
+  $overlaycolorMap
+);
+
+// Text Color Mapping
+$textColorsMap: ();
+$textColorsMap: map-merge(
+  (
+    "theme": $theme-color,
+    "title": $title-color,
+    "body": $body-color,
+    "white": $white-color,
+    "yellow": $yellow-color,
+    "success": $success-color,
+    "error": $error-color,
+  ),
+  $textColorsMap
+);
+
+// Font Mapping
+$fontsMap: ();
+$fontsMap: map-merge(
+  (
+    "icon": $icon-font,
+    "title": $title-font,
+    "body": $body-font,
+  ),
+  $fontsMap
+);

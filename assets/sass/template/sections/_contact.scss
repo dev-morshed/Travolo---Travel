@@ -1,0 +1,66 @@
+.contact-box_wrapper {
+  .outer-wrap {
+    background-color: $theme-color;
+    border-radius: 10px;
+    padding: 30px 0px 60px;
+    max-width: 1340px;
+    margin-top: 0;
+  }
+}
+
+.contact-box {
+  background-color: $white-color;
+  border: 1px solid $theme-color;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 30px 25px;
+  padding-left: 110px;
+  position: relative;
+  .contact-box_icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    background-color: $theme-color;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: $white-color;
+    position: absolute;
+    left: 30px;
+  }
+
+  .contact-box__title {
+    margin-bottom: 5px;
+  }
+
+  .contact-box__text {
+    margin-bottom: -5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    font-family: $body-font;
+    color: $title-color;
+  }
+
+  .contact-box_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: block;
+      margin-top: 2px;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: $body-font;
+      color: $title-color;
+    }
+  }
+
+  &:hover {
+    .contact-box_icon {
+      background-color: $theme-color2;
+    }
+  }
+}

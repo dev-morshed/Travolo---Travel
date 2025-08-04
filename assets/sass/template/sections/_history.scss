@@ -1,0 +1,197 @@
+.history-steped {
+  position: relative;
+  padding-right: 100px;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 60px;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &::before {
+    width: 105px;
+    height: 2px;
+    background-color: $border-color;
+  }
+
+  &::after {
+    width: 10px;
+    height: 10px;
+    outline: 5px solid $border-color;
+    border-radius: 50%;
+    background-color: $theme-color;
+  }
+
+  .divider {
+    height: 100%;
+    width: 2px;
+    background-color: $border-color;
+    position: absolute;
+    right: -1px;
+    top: 30%;
+    transform: translateY(-50%);
+
+    &::before {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $border-color;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:first-child {
+    .divider {
+      &::before {
+        content: '';
+        top: 0;
+      }
+    }
+  }
+
+  &:last-child {
+    .divider {
+      &::before {
+        content: '';
+        bottom: 0;
+        top: unset;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    margin-top: 80px;
+    padding-left: 100px;
+    padding-right: unset;
+    &::before, &::after {
+      right: unset;
+      left: -5px;
+    }
+
+    .divider {
+      top: 80%;
+      left: -1px;
+      right: unset;
+    }
+  }
+}
+.vs-history {
+  --body-color: #8B919C;
+  padding: 30px 40px 20px;
+  position: relative;
+  border: 2px solid $border-color;
+  border-radius: 10px;
+  background-color: $white-color;
+  
+  .history-date {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: $body-font;
+    margin-bottom: 0;
+    position: relative;
+    padding-left: 30px;
+    color: $body-color;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      width: 120px;
+      height: 2px;
+      background-color: $border-color;
+    }
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $theme-color;
+    }
+  }
+
+  .history-title {
+    margin-bottom: 0;
+  }
+
+  .header-area {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@include lg {
+  .vs-history {
+    .history-date {
+      padding-left: 15px;
+      &::before {
+        width: 80px;
+      }
+    } 
+  }
+}
+
+@include md {
+  .history-steped {
+    padding-right: 50px;
+    &:nth-child(even) {
+      padding-left: 50px;
+      margin-top: 50px;
+    }
+    &::before {
+      width: 55px;
+    }
+  }
+
+  .vs-history {
+    padding: 25px 30px 15px;
+    .history-date {
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@include sm {
+  .history-steped {
+    margin-top: 30px;
+    padding: 0 15px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:nth-child(even) {
+      padding: 0 15px;
+      margin-top: 30px;
+    }
+
+    &::before, &::after {
+      display: none;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+
+  .vs-history {
+    padding: 20px 20px 10px;
+    .history-date {
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+}

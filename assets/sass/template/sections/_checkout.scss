@@ -1,0 +1,31 @@
+.checkout-ordertable {
+  th,
+  td {
+    vertical-align: top;
+    text-align: right;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-left: none;
+    color: #2c3e50;
+  }
+  tr:last-child{
+    th{
+      border-bottom: none;
+    }
+    td {
+      border-bottom: none;
+    }
+  } 
+}
+
+.checkout-ordertable th {
+  text-align: left;
+}
+
+.vs-checkout-wrapper {
+  .cart_table {
+    margin-bottom: 0px;
+    border: none;
+  }
+}

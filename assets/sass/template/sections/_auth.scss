@@ -1,0 +1,10 @@
+.signup-form {
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+@include md {
+  .signup-form {
+    padding: 20px 15px;
+  }
+}

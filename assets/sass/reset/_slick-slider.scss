@@ -1,0 +1,157 @@
+.slick-track {
+  min-width: 100%;
+
+  >[class*=col] {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  .col-auto {
+    width: auto;
+  }
+}
+
+.slick-slide img {
+  display: inline-block;
+}
+
+
+.slick-dots {
+  list-style-type: none;
+  padding: 0 0;
+  margin: 0 0 30px 0;
+  line-height: 0;
+  text-align: center;
+  height: max-content;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  button {
+    font-size: 0;
+    padding: 0;
+    width: 60px;
+    height: 10px;
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #D1D1D1;
+    transition: all ease 0.4s;
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+      border-color: $theme-color;
+    }
+  }
+
+  .slick-active {
+    button {
+      background-color: $theme-color;
+      border-color: transparent;
+    }
+  }
+}
+
+
+.slick-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  background-color: $white-color;
+  position: absolute;
+  top: 50%;
+  border: 2px solid $theme-color;
+  left: var(--pos-x, -100px);
+  width: var(--icon-size, 60px);
+  height: var(--icon-size, 60px);
+  font-size: var(--icon-font-size, 20px);
+  margin-top: calc(var(--icon-size, 66px) / -2);
+  transition: .5s ease-in-out;
+  z-index: 2;
+  border-radius: 50%;
+
+  &.default {
+    position: relative;
+    --pos-x: 0;
+    margin-top: 0;
+  }
+
+  &.slick-next {
+    right: var(--pos-x, -100px);
+    left: auto;
+  }
+
+  i {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: $theme-color;
+    color: $white-color;
+    border-color: transparent;
+  }
+}
+
+.arrow-margin {
+  .slick-arrow {
+    top: calc(50% - 30px);
+  }
+}
+
+
+
+.arrow-wrap {
+  .slick-arrow {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover {
+    .slick-arrow {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+
+@include xl {
+  .slick-arrow {
+    --arrow-horizontal: -20px;
+  }
+}
+
+@include ml {
+  .slick-arrow {
+    --arrow-horizontal: 40px;
+  }
+}
+
+@include md {
+  .slick-arrow {
+    --icon-size: 40px;
+    margin-right: 40px;
+
+    &.slick-next {
+      margin-right: 0;
+      margin-left: 40px;
+    }
+  }
+
+  .slick-dots {
+    margin: 8px 0 38px 0;
+  }
+}

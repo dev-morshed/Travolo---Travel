@@ -1,0 +1,102 @@
+.breadcumb-menu {
+  max-width: 100%;
+  margin: 0 0 0 0;
+  padding: 16.5px 0;
+  list-style-type: none;
+
+  li {
+    display: inline;
+    list-style: none;
+    position: relative;
+
+    &:after {
+      content: '/';
+      position: relative;
+      margin-left: 14px;
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  li,
+  a,
+  span {
+    white-space: normal;
+    word-break: break-word;
+    font-weight: 400;
+    font-size: 18px;
+    color: $white-color;
+
+    >i {
+      margin-right: 10px;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+
+.breadcumb-title {
+  font-size: 48px;
+  color: $white-color;
+  margin: 0 0 -5px 0;
+}
+
+.breadcumb-wrapper {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background-color: $title-color;
+
+  @include md {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+
+@include lg {
+  .breadcumb-title {
+    font-size: 48px;
+  }
+}
+
+
+@include md {
+  .breadcumb-title {
+    font-size: 40px;
+    margin: -0.15em 0 -0.4em 0;
+  }
+}
+
+
+@include sm {
+  .breadcumb-title {
+    font-size: 36px;
+  }
+
+  .breadcumb-menu {
+    li,
+    a,
+    span {
+      font-size: 14px;
+    }
+
+    li:after {
+      margin-left: 11px;
+      margin-right: 9px;
+    }
+  }
+
+}

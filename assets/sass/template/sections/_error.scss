@@ -1,0 +1,65 @@
+.error-content {
+  max-width: 744px;
+  margin: {
+    left: auto;
+    right: auto;
+  };
+}
+
+.error-img {
+  margin-top: 60px;
+}
+
+.error-title {
+  font-size: 48px;
+  line-height: 1;
+  margin: 0 0 18px 0;
+}
+
+.error-text {
+  margin: 0 0 30px 0;
+  max-width: 596px;
+  margin: {
+    left: auto;
+    right: auto;
+  };
+}
+
+.vs-error-wrapper {
+  background-color: #fafafa;
+  padding: calc(#{$space} + 54px) 0 $space 0;
+}
+
+
+@include lg {
+
+  .vs-error-wrapper {
+    padding: $space 0 $space 0;
+  }
+}
+
+@include md {
+  .error-title {
+    font-size: 48px;
+  }
+
+  .vs-error-wrapper {
+    padding: $space-mobile 0 $space-mobile 0;
+  }
+}
+
+@include sm {
+  .error-title {
+    font-size: 36px;
+  }
+
+  .text-theme {
+    font-size: 20px;
+  }
+
+  .search-inline {
+    input {
+      padding-left: 30px;
+    }
+  }
+}

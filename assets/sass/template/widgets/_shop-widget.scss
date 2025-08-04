@@ -1,0 +1,68 @@
+.price_slider_wrapper {
+  margin: {
+    top: 40px;
+    bottom: 30px;
+  };
+  .ui-slider {
+    height: 8px;
+    position: relative;
+    width: 100%;
+    background-color: $border-color;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    outline: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 10.5px;
+    padding: 0;
+    border: 5px solid $theme-color;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    margin-top: -1px;
+    background-color: var(--border-color);
+    transform: translateX(8px);
+  }
+  .ui-slider-range {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    background-color: var(--theme-color);
+  }
+
+  .price_label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 15px;
+  }
+
+  .vs-btn {
+    padding: 13px 20px;
+    background-color: $border-color;
+    color: $theme-color;
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  .price_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.chekbox-area {
+  margin-bottom: 5px;
+}

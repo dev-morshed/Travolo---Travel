@@ -1,0 +1,130 @@
+.vs-comments-wrap {
+  ul.comment-list,
+  .children {
+    list-style: none;
+    margin: -10px 0 0 0;
+    padding: 0;
+  }
+
+  .children {
+    margin-left: 70px;
+  }
+
+  .vs-post-comment {
+    position: relative;
+    display: flex;
+    padding: 30px 30px;
+    margin: 30px 0 30px 0;
+    background-color: $smoke-color;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .comment-avater {
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+    margin-right: 25px;
+    overflow: hidden;
+  }
+
+  .comment-content {
+    flex: 1;
+    position: relative;
+  }
+  
+  .comment-date {
+    font-size: 14px;
+  }
+
+  .commented-on {
+    font-size: 14px;
+    color: $title-color;
+    i {
+      margin-right: 4px;
+      color: $theme-color;
+    }
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: 600;
+    margin: {
+      top: 10px;
+      bottom: 10px;
+    }
+  }
+
+  .reply_and_edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .replay-btn {
+    font-weight: 700;
+    margin-left: 4px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 14px;
+    i {
+      font-size: 12px;
+      margin-left: 2px;
+    }
+  }
+}
+
+.vs-comment-form {
+  margin-top: 58px;
+  .form-group {
+    border: none;
+  }
+
+  .form-control {
+    background-color: $smoke-color;
+    color: $title-color;
+    &::placeholder {
+      color: $title-color;
+    }
+  }
+
+  .custom-checkbox {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    label {
+      font-weight: 400;
+    }
+  }
+
+  .notice {
+    margin-top: 0;
+  }
+}
+
+@include sm {
+  .vs-comments-wrap {
+    .vs-post-comment {
+      padding: 20px 15px;
+      display: block;
+    }
+
+    .comment-content {
+      margin-top: 20px;
+    }
+
+    .reply_and_edit {
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .children {
+      margin-left: 0;
+    }
+  }
+
+  .vs-comment-form {
+    margin-top: 30px;
+  }
+}

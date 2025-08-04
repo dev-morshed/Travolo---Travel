@@ -1,0 +1,144 @@
+.vs-pagination {
+  text-align: center;
+  margin-bottom: 30px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 3px;
+    list-style-type: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  span,
+  a {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    font-family: $body-font;
+    color: $title-color;
+    background-color: $white-color;
+    width: 50px;
+    height: 50px;
+    line-height: 52px;
+    font-weight: 400;
+    padding: 0;
+    font-size: 16px;
+    z-index: 1;
+    border-radius: 6px;
+    vertical-align: middle;
+    border: 1px solid $border-color;
+
+    &.active,
+    &:hover {
+      color: $white-color;
+      background-color: $theme-color;
+      box-shadow: none;
+    }
+  }
+
+}
+
+
+.post-pagination {
+  border-bottom: 1px solid $border-color;
+  margin: 0 0 50px 0;
+  
+  .pagi-icon {
+    font-size: 36px;
+    color: $border-color;
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+
+.post-pagi-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0px;
+  
+  > img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 54px;
+    text-align: center;
+    color: $title-color;    
+    overflow: hidden;
+    background-color: $smoke-color;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $theme-color;
+      color: $white-color;
+    }
+  }
+
+  .pagi-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $title-color;
+    margin: 4.5px 0 0 0;
+    max-width: 250px;
+    flex: 1;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+
+  &.next {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+}
+
+
+@include ml {
+  .post-pagination {
+    margin: 0px 0 40px;
+  }
+}
+
+
+@include sm {
+  .vs-pagination {
+    span, 
+    a {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      padding: 0 10px;
+      vertical-align: middle;
+
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .post-pagi-box {
+    display: block;
+    padding: 30px 20px 20px;
+
+    >a {
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.image-scale-hover {
+  overflow: hidden;
+
+  img {
+    transition: all ease 0.4s;
+    transform: scale(1.001);
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+
+.z-index-step1 {
+  position: relative;
+  z-index: 4 !important;
+}
+
+.z-index-common {
+  position: relative;
+  z-index: 3;
+}
+
+.z-index-n1 {
+  z-index: -1;
+}
+
+.vs-media {
+  display: flex;
+}
+
+.media-body {
+  flex: 1;
+}
+
+
+.badge {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  text-align: center;
+  background-color: $theme-color;
+  color: $white-color;
+  padding: .35em .55em;
+  border-radius: 50%;
+}
+
+.new-label {
+  font-size: 12px;
+  background-color: $theme-color2;
+  color: $white-color;
+  line-height: 1;
+  padding: 5px 5px 3px 5px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  position: relative;
+  top: -1px;
+  font-weight: 500;
+  margin-left: 5px;
+  animation: newlabel infinite 0.4s;
+}
+
+.shape-mockup-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.shape-mockup {
+  display: inline-block;
+  position: absolute;
+}
+
+.plane2 {
+  opacity: 0.2;
+}
+
+@keyframes newlabel {
+  0% {
+    background-color: $theme-color;
+  }
+  50% {
+    background-color: $theme-color2;
+  }
+  100% {
+    background-color: $theme-color;
+  }
+}
+
+
+
+@media (max-width: 1550px) {
+  .d-xxxl-block {
+    display: block !important;
+  }
+}

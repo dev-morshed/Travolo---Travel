@@ -1,0 +1,236 @@
+.radioselect,
+.form-control,
+.form-select,
+textarea,
+input {
+  height: 60px;
+  padding: 0 30px 0 25px;
+  padding-right: 45px;
+  border-radius: 10px;
+  color: $body-color;
+  border: 1px solid $border-color;
+  background-color: $white-color;
+  font-size: 14px;
+  width: 100%;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: $theme-color;
+    background-color: $white-color;
+  }
+
+  @include inputPlaceholder {
+    color: $body-color;
+  }
+}
+
+.form-select,
+select {
+  display: block;
+  width: 100%;
+  line-height: 1.5;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right 26px center;
+  background-repeat: no-repeat;
+  background-size: 16px 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea.form-control,
+textarea {
+  min-height: 150px;
+  padding-top: 16px;
+  padding-bottom: 17px;
+  border-radius: 10px;
+}
+
+
+input[type="checkbox"] {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+
+  &:checked {
+    ~label {
+
+      &:before {
+        content: "\f00c";
+        color: $white-color;
+        background-color: $theme-color;
+        border-color: $theme-color;
+      }
+    }
+  }
+
+  ~label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: block;
+
+    &:before {
+      content: '';
+      font-family: $icon-font;
+      font-weight: 700;
+      position: absolute;
+      left: 0px;
+      top: 3.5px;
+      background-color: $white-color;
+      border: 1px solid $border-color;
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
+
+
+input[type="radio"] {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+
+  ~label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0;
+
+
+    &::before {
+      content: '\f111';
+      position: absolute;
+      font-family: $icon-font;
+      left: 0;
+      top: -2px;
+      width: 20px;
+      height: 20px;
+      padding-left: 0px;
+      font-size: 0.6em;
+      line-height: 19px;
+      text-align: center;
+      border: 1px solid $theme-color;
+      border-radius:10px ;
+      font-weight: 700;
+      background: $white-color;
+      color: transparent;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &:checked {
+    ~label {
+      &::before {
+        border-color: $theme-color;
+        background-color: $theme-color;
+        color: $white-color;
+      }
+    }
+  }
+
+}
+
+label {
+  margin-bottom: 0.5em;
+  margin-top: -0.3em;
+  display: block;
+  color: $title-color;
+  font-family: $body-font;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: var(--bs-gutter-x);
+  position: relative;
+
+  >i {
+    position: absolute;
+    right: calc((var(--bs-gutter-x) / 2) + 30px);
+    top: 18px;
+    font-size: 14px;
+    color: #A0ABB4;
+  }
+
+  &.has-label {
+    >i {
+      top: 48px;
+    }
+  }
+}
+
+
+textarea.is-invalid,
+select.is-invalid,
+input.is-invalid,
+.was-validated input:invalid {
+  border: 1px solid $error-color !important;
+  background-position: right calc(.375em + 0.8875rem) center;
+  background-image: none;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+textarea.is-invalid {
+  background-position: top calc(.375em + 0.5875rem) right calc(.375em + .8875rem);
+}
+
+.row.no-gutters>.form-group {
+  margin-bottom: 0;
+}
+
+.form-messages {
+  display: none;
+
+  &.mb-0 * {
+    margin-bottom: 0;
+  }
+
+  &.success {
+    color: $success-color;
+    display: block;
+  }
+
+  &.error {
+    color: $error-color;
+    display: block;
+  }
+
+  pre {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+

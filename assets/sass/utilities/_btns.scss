@@ -1,0 +1,358 @@
+// Primary Button
+.vs-btn {
+  border: none;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-family: $title-font;
+  background-color: $body-color;
+  color: $white-color;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  padding: 15px 30px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-transform: uppercase;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background-color: $theme-color;
+    transform: scale(0);
+    z-index: -1;
+    border-radius: inherit;
+    transform-origin: right bottom;
+    transition: opacity ease 0.4s, visibility ease 0.4s, transform ease 0.4s;
+    // opacity: 0;
+    // visibility: hidden;
+  }
+
+  &:before {
+    transform-origin: left top;
+  }
+
+  &:hover {
+    color: $white-color;
+
+    &:before,
+    &:after {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.style2 {
+    background-color: $white-color;
+    color: $theme-color;
+    &::before,
+    &::after {
+      background-color: $theme-color2;
+    }
+    &:hover {
+      color: $white-color;
+    }
+  }
+
+  &.style3 {
+    background-color: $theme-color2;
+    color: $white-color;
+    &::before,
+    &::after {
+      background-color: $theme-color;
+    }
+  }
+
+  &.style4 {
+    background-color: $theme-color;
+    &::before,
+    &::after {
+      background-color: $theme-color2;
+    }
+  }
+
+  &.style5,
+  &.style6,
+  &.style7 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 15px;
+    padding: 22px 50px;
+    background: var(--theme-color);
+    min-height: 60px;
+    &::before,
+    &::after {
+      background: var(--theme-color2);
+    }
+    & > i {
+      min-width: 20px;
+      min-height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--theme-color2);
+      border-radius: 50%;
+      transition: all ease 0.4s;
+    }
+  }
+  &.style6 {
+    background: var(--title-color);
+  }
+  &.style7 {
+    padding: 22px 30px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &.has-arrow {
+    i {
+      margin-left: 6px;
+    }
+  }
+}
+
+// Icon Btn
+.icon-btn {
+  display: inline-block;
+  width: var(--btn-size, 60px);
+  height: var(--btn-size, 60px);
+  line-height: var(--btn-size, 60px);
+  background-color: $white-color;
+  color: $theme-color;
+  text-align: center;
+  border-radius: 50%;
+  font-size: var(--btn-font-size, 20px);
+  box-shadow: (0px 0px 8px rgba(0, 0, 0, 0.25));
+  padding: 0;
+  vertical-align: middle;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  i {
+    line-height: inherit;
+  }
+
+  &:hover {
+    background-color: $theme-color;
+    color: $white-color;
+  }
+}
+
+// Play Button
+.play-btn {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  > i {
+    display: inline-block;
+    width: var(--icon-size, 124px);
+    height: var(--icon-size, 124px);
+    line-height: var(--icon-size, 124px);
+    text-align: center;
+    background-color: rgba(#ff681a, $alpha: 0.8);
+    color: $theme-color;
+    font-size: var(--icon-font-size, 1.5em);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all ease 0.5s;
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#ff681a, 0.8);
+    @extend .ripple-animation;
+    z-index: -1;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+  }
+
+  &:after {
+    animation-delay: 2s;
+  }
+
+  &:hover {
+    > i {
+      background-color: rgba(#37d4d9, $alpha: 0.8);
+    }
+    &:after,
+    &::before {
+      background-color: rgba(#37d4d9, 0.8);
+      color: $white-color;
+    }
+  }
+  &.style2 {
+    & > i {
+      &:hover {
+        background-color: var(--theme-color);
+      }
+    }
+  }
+}
+
+// Link Button
+.link-btn {
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 0.8;
+  position: relative;
+  padding-bottom: 2px;
+  margin-bottom: -2px;
+  text-transform: capitalize;
+  color: $title-color;
+
+  i {
+    margin-left: 7px;
+    font-size: 0.9rem;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e1e1e1;
+    transition: all ease 0.4s;
+  }
+
+  &:hover {
+    color: $theme-color2;
+
+    &::before {
+      background-color: $theme-color2;
+    }
+  }
+}
+
+// Scroll To Top
+.scroll-btn {
+  position: fixed;
+  bottom: 300px;
+  right: 30px;
+  z-index: 94;
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  border-radius: 50%;
+
+  i {
+    display: inline-block;
+    background-color: $theme-color2;
+    color: $white-color;
+    text-align: center;
+    font-size: 16px;
+    width: var(--btn-size, 50px);
+    height: var(--btn-size, 50px);
+    line-height: var(--btn-size, 50px);
+    z-index: 2;
+    border-radius: inherit;
+    position: relative;
+    transition: all ease 0.8s;
+    box-shadow: 0 0 20px 0 rgba(#000, 0.02);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: var(--extra-shape, -6px);
+    top: var(--extra-shape, -6px);
+    right: var(--extra-shape, -6px);
+    bottom: var(--extra-shape, -6px);
+    background-color: transparent;
+    border-radius: inherit;
+    z-index: 1;
+    border: 2px dashed $theme-color2;
+    transition: all ease 0.4s;
+    animation: spin 13s infinite linear;
+  }
+
+  &:focus,
+  &:hover {
+    i {
+      background-color: $theme-color;
+      color: $white-color;
+    }
+
+    &:before {
+      border-color: $theme-color;
+    }
+  }
+
+  &.show {
+    bottom: 120px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include sm {
+    --btn-size: 40px;
+    --extra-shape: -4px;
+    right: 15px;
+    bottom: 50px;
+
+    &.show {
+      bottom: 15px;
+    }
+  }
+}
+
+.scrollToTop {
+  position: fixed;
+  right: 60px;
+  bottom: 500px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease 0.4s;
+  z-index: 96;
+
+  &.show {
+    bottom: 60px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@include md {
+  .vs-btn {
+    font-size: 14px;
+    padding: {
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+  .play-btn {
+    --icon-size: 60px;
+    --icon-font-size: 20px;
+  }
+
+  .scrollToTop {
+    right: 20px;
+
+    &.show {
+      bottom: 20px;
+    }
+  }
+}

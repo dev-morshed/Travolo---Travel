@@ -1,0 +1,276 @@
+.footer-menu > ul {
+  li {
+    padding-left: 25px;
+    position: relative;
+    i {
+      position: absolute;
+      left: 0;
+      top: 1px;
+    }
+  }
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.footer-wrapper {
+  background-color: $title-color;
+}
+
+.footer-layout1,
+.footer-layout4,
+.footer-layout5 {
+  --body-color: #ffffff;
+  .social-style {
+    margin-top: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $theme-color;
+    border-radius: 10px;
+
+    .form-control {
+      border: none;
+      margin: 5px;
+      color: $white-color;
+      padding-right: 15px;
+      background-color: transparent;
+    }
+
+    .vs-btn {
+      margin: 5px;
+      overflow: unset;
+      display: inline-block;
+    }
+  }
+  .footer-widget.widget_nav_menu {
+    margin-bottom: 0px;
+  }
+}
+
+.footer-insta-image {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.social-style {
+  a {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: $white-color;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $white-color;
+
+    &:hover {
+      background-color: $theme-color;
+      border-color: $theme-color;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.copyright-wrap {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid $border-color;
+}
+
+.copyright-menu {
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    &::after {
+      content: "";
+      width: 1px;
+      height: 50%;
+      background-color: $theme-color;
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: 400;
+    color: $white-color;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+
+  a {
+    color: $theme-color;
+
+    &:hover {
+      color: $theme-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+// CTA Area CSS
+.cta-style1 {
+  position: relative;
+  background-color: $theme-color;
+  padding: 0 60px;
+  border-radius: 10px;
+  .cta-title {
+    color: $white-color;
+  }
+}
+
+.footer-top {
+  position: relative;
+  .shadow-color {
+    height: 50%;
+    bottom: unset;
+    top: 0;
+  }
+}
+
+.footer-top2 {
+  .shadow-color {
+    background-color: $smoke-color;
+  }
+}
+
+.cta-image {
+  margin-bottom: -15px;
+  margin-top: -20px;
+}
+
+.footer-newsletter2 {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 32px;
+}
+.newsletter-style2 {
+  margin-bottom: 30px;
+  padding-left: 100px;
+  position: relative;
+  min-height: 80px;
+  .newsletter-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .newsletter-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: $white-color;
+    margin-bottom: 5px;
+    padding-top: 7px;
+  }
+}
+
+@include lg {
+  .footer-widget {
+    margin-bottom: 60px;
+
+    .widget_title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    &.widget_nav_menu {
+      .widget_title {
+        margin-bottom: 25px;
+      }
+
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include md {
+  .widget-area {
+    padding: {
+      top: 50px;
+      bottom: 50px;
+    }
+  }
+
+  .footer-widget {
+    .widget_title {
+      font-size: 22px;
+    }
+  }
+
+  .copyright-text {
+    font-size: 14px;
+  }
+
+  .footer-top {
+    &::before {
+      height: 100px;
+    }
+  }
+
+  .cta-style1 {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+@include sm {
+  .footer-top {
+    &::before {
+      height: 130px;
+    }
+  }
+  .cta-style1 {
+    padding: 30px 15px;
+  }
+  .newsletter-style2 {
+    padding-left: 85px;
+    .newsletter-img {
+      img {
+        width: 60px;
+      }
+    }
+    .newsletter-text {
+      font-size: 20px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+}

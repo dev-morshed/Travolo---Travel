@@ -1,0 +1,242 @@
+.widget-area {
+  padding-top: 120px;
+  padding-bottom: 93px;
+}
+
+.widget-area2 {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+
+
+.footer-widget {
+  &,
+  .widget {
+    padding: 0;
+    border: none;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+
+  .widget_title {
+    border: none;
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 0 0 20px 0;
+    color: $white-color;
+    position: relative;
+    &::before, &::after {
+      content: ""; 
+      position: absolute;  
+    }
+    &::before {
+      width: 60px; 
+      height: 2px; 
+      background-color: $theme-color; 
+      left: 0;
+      bottom: 0; 
+    }
+    &::after {
+      width: 5px;
+      height: 5px;
+      outline: 4px solid $theme-color;
+      border-radius: 50%;
+      background-color: $white-color;
+      left: 4px;
+      bottom: -1px;
+      animation: leftToRight infinite 5s linear;
+    }
+  }
+
+  .vs-btn {
+    background-color: $theme-color;
+    &::before, &::after {
+      background-color: $theme-color2;
+    }
+  }
+
+  // &.widget_meta,
+  // &.widget_pages,
+  // &.widget_archive,
+  // &.widget_categories,
+  &.widget_nav_menu {
+    margin-bottom: 45px;    
+
+    .widget_title {
+      margin-bottom: 35px;
+    }
+
+    a {
+      width: max-content;
+      display: block;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 15px;
+      max-width: 100%;
+      padding: 0 0 0 15px;
+      color: $white-color;
+      background-color: transparent;
+      // transition: all .3s ease-in-out;
+      position: relative;
+
+      i {
+        position: absolute;
+        left: 0;
+        top: 4px;
+      }
+
+      &:hover {
+        background-color: transparent;
+        color: $theme-color;
+      }
+
+    }
+
+    li {
+      >span {
+        @include equal-size(auto);
+        position: relative;
+        background-color: transparent;
+        color: $body-color;
+        line-height: 1;
+      }
+
+      &:last-child {
+        a {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .sidebar-gallery {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    a {
+      overflow: hidden;
+      border-radius: 5px;
+      img {
+        transition: .5s ease-in-out;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+
+.vs-widget-about {
+  .footer-text {
+    max-width: 275px;
+    font-family: $body-font;
+    font-size: 16px;
+  }
+}
+
+.footer-insta-image {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.social-style1 {
+  a {
+    width: 45px; 
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: $white-color;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $white-color;
+
+    &:hover {
+      background-color: $theme-color;
+      border-color: $theme-color;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.footer-contact {
+  .menu {
+    a {
+      padding-left: 24px;
+      
+      i {
+        font-size: 14px;
+        top: 5px;
+      }
+    }
+  }
+}
+
+.footer-widget {
+  .newsletter-form {
+    .form_text {
+      font-size: 16px;
+      font-family: $body-font;
+    }
+    .form-control {
+      margin-bottom: 15px;
+      background-color: transparent;
+      height: 46px;
+      &:focus {
+        color: $white-color;
+      }
+    }
+    .vs-btn {
+      width: unset;
+    }
+  }
+}
+
+
+
+@include lg{
+  
+  .footer-widget {
+    margin-bottom: 60px;
+
+    .widget_title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    // &.widget_meta,
+    // &.widget_pages,
+    // &.widget_archive,
+    &.widget_categories,
+    &.widget_nav_menu {
+      .widget_title {
+        margin-bottom: 25px;
+      }
+      
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+@include md {
+  .footer-widget {
+    .widget_title {
+      font-size: 22px;
+    }
+  }
+  .widget-area2 {
+    padding-bottom: 20px;
+  }
+}
